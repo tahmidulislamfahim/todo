@@ -7,15 +7,13 @@ class BackArrow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.05),
+      padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.05),
       child: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: SvgPicture.asset(
-            "assets/back.svg",
-          )),
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: SvgPicture.asset("assets/images/back.svg"),
+      ),
     );
   }
 }

@@ -23,7 +23,10 @@ class TextBox extends StatelessWidget {
         ),
         hintText: hintHeading,
         hintStyle: Theme.of(context).textTheme.displaySmall,
-        contentPadding: textFieldPadding(context),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 16.0,
+          horizontal: 20.0,
+        ),
       ),
     );
   }

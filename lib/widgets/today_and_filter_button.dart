@@ -41,7 +41,7 @@ class TodayAndFilterButton extends StatelessWidget {
                       ),
                     ),
                     SvgPicture.asset(
-                      "assets/filter.svg",
+                      "assets/images/filter.svg",
                       height: MediaQuery.of(context).size.height * 0.014,
                     ),
                   ],

@@ -16,9 +16,7 @@ class SettingsPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
 
           // Allow Notifications Switch
           Center(
@@ -35,22 +33,19 @@ class SettingsPage extends StatelessWidget {
                         Text(
                           'Allow Notifications',
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, color: Colors.black),
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black,
+                          ),
                         ),
                         SizedBox(width: 100),
-                        Switch(
-                          value: true,
-                          onChanged: null,
-                        ),
+                        Switch(value: false, onChanged: null),
                       ],
                     ),
                   )
                 : null,
           ),
 
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
 
           // Delete User Data
           Center(
@@ -58,34 +53,29 @@ class SettingsPage extends StatelessWidget {
               padding: const EdgeInsets.all(25),
               margin: const EdgeInsets.symmetric(horizontal: 25),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10), color: Colors.black),
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.black,
+              ),
               child: Row(
                 children: [
                   Text(
                     'Clear All Data',
                     style: TextStyle(
-                        fontWeight: FontWeight.w500, color: Colors.white),
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(width: 180),
-                  Icon(
-                    Icons.delete_outlined,
-                    color: Colors.white,
-                    size: 25,
-                  ),
+                  Icon(Icons.delete_outlined, color: Colors.white, size: 25),
                 ],
               ),
             ),
           ),
 
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
 
           //Divider(endIndent: 45, indent: 45,),
-
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
 
           // GitHub name
           //  SelectableText(

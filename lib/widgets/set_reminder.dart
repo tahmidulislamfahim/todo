@@ -39,7 +39,7 @@ class SetReminder extends StatelessWidget {
                 ),
               ),
               SvgPicture.asset(
-                "assets/bell_white.svg",
+                "assets/images/bell_white.svg",
                 height: MediaQuery.of(context).size.height * 0.014,
               ),
             ],

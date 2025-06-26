@@ -29,7 +29,7 @@ class _IconTextBoxState extends State<IconTextBox> {
         prefixIcon: SvgPicture.asset(widget.iconLocation),
         suffixIcon: widget.controller.text.isEmpty
             ? null
-            : SvgPicture.asset('assets/cross.svg'),
+            : SvgPicture.asset('assets/images/cross.svg'),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(100.0),
           borderSide: BorderSide(width: 1.0, color: outlineColor),

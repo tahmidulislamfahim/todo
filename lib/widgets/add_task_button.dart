@@ -16,7 +16,7 @@ class AddTaskButton extends StatelessWidget {
       splashColor: blueColor,
       shape: const CircleBorder(),
       child: SvgPicture.asset(
-        "assets/plus.svg",
+        "assets/images/plus.svg",
         height: MediaQuery.of(context).size.height * 0.02,
       ),
     );

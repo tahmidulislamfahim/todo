@@ -3,12 +3,14 @@ class Task {
   String description;
   String date;
   String time;
+  bool isDone; // ✅ Add this
 
   Task({
     required this.title,
     required this.description,
     required this.date,
     required this.time,
+    this.isDone = false,
   });
 
   // Convert a Task to a JSON map
@@ -18,6 +20,7 @@ class Task {
       'description': description,
       'date': date,
       'time': time,
+      'isDone': isDone,
     };
   }
 
@@ -28,6 +31,7 @@ class Task {
       description: json['description'],
       date: json['date'],
       time: json['time'],
+      isDone: json['isDone'] ?? false,
     );
   }
 }

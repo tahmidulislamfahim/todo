@@ -106,8 +106,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     DateTime? pickedDate = await showDatePicker(
                       context: context,
                       initialDate: DateTime.now(),
-                      firstDate: DateTime(2000),
-                      lastDate: DateTime(2100),
+                      firstDate: DateTime.now(),
+                      lastDate: DateTime(DateTime.now().year + 5),
                     );
                     if (pickedDate != null) {
                       String formattedDate =
@@ -135,7 +135,23 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       context: context,
                       initialTime: TimeOfDay.now(),
                     );
+
                     if (pickedTime != null) {
+                      final now = TimeOfDay.now();
+
+                      final nowMinutes = now.hour * 60 + now.minute;
+                      final pickedMinutes =
+                          pickedTime.hour * 60 + pickedTime.minute;
+
+                      if (pickedMinutes <= nowMinutes) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Please select a future time"),
+                          ),
+                        );
+                        return;
+                      }
+
                       final formattedTime = pickedTime.format(context);
                       setState(() {
                         timeController.text = formattedTime;
@@ -144,11 +160,14 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     }
                   },
                 ),
+
                 const Spacing(),
                 ElevatedButton(
                   onPressed: () {
                     if (_titleValue.isNotEmpty &&
-                        _descriptionValue.isNotEmpty) {
+                        _descriptionValue.isNotEmpty &&
+                        _dateValue.isNotEmpty &&
+                        _timeValue.isNotEmpty) {
                       final newTask = Task(
                         title: _titleValue,
                         description: _descriptionValue,
