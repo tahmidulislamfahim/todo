@@ -14,10 +14,11 @@ void setPortraitOrientation() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
 
-void main() {
-  setPortraitOrientation();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  // Set system UI overlay (status/navigation bar color & brightness)
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: whiteColor,
